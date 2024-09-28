@@ -22,7 +22,7 @@ const Camera = ({ userId }) => {
             formData.append('file', ImageUpload);
             formData.append('userId', userId);
 
-            await axios.post('http://localhost:5000/api/auth/UploadingImage', formData);
+            await axios.post('https://opportunest-1.onrender.com/api/auth/UploadingImage', formData);
             console.log('Image uploaded successfully');
             setCameraModel(false)
         } catch (error) {

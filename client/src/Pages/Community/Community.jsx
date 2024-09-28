@@ -27,7 +27,7 @@ const Community = () => {
   // Fetch user data and check if basicdata exists
   const callAbout = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/auth/user', {
+      const res = await axios.get('https://opportunest-1.onrender.com/api/auth/user', {
         withCredentials: true, // Ensures cookies are sent
       });
 
@@ -83,8 +83,8 @@ const Community = () => {
   const updateLikeorUnlike = async (postId, userId, action) => {
     try {
       const url = action === 'like' 
-        ? 'http://localhost:5000/api/auth/like'
-        : 'http://localhost:5000/api/auth/unlike';
+        ? 'https://opportunest-1.onrender.com/api/auth/like'
+        : 'https://opportunest-1.onrender.com/api/auth/unlike';
 
       const res = await axios({
         method: action === 'like' ? 'POST' : 'DELETE',
@@ -105,7 +105,7 @@ const Community = () => {
   // Fetch all users' data
   const getalldata = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/auth/getalldata', {
+      const res = await axios.get('https://opportunest-1.onrender.com/api/auth/getalldata', {
         withCredentials: true,
       });
 
@@ -134,7 +134,7 @@ const Community = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/post', {
+      const res = await axios.post('https://opportunest-1.onrender.com/api/auth/post', {
         email,
         sharedtext,
       });
@@ -150,7 +150,7 @@ const Community = () => {
     }
   };
   const userImage = userData && userData.image 
-  ? `http://localhost:5000/Images/${userData.image}` // Display the uploaded image
+  ? `https://opportunest-1.onrender.com/Images/${userData.image}` // Display the uploaded image
   : avatar; // Default avatar if no image is uploaded
 
    // Default avatar if no image is uploaded
@@ -212,7 +212,7 @@ const Community = () => {
               user.posts?.map((post, postIndex) => (
                 <div key={`${index}-${postIndex}`} className="post-content">
                  <Link className="post-link" to={`/profile/${user.basicdata[0].firstname}-${user.basicdata[0].lastname}/${user._id}`} > <div className="user-info">
-                  <img src={user && user.image ?`http://localhost:5000/Images/${user.image}` : avatar} alt="profile_photo" className="profile-photo" />
+                  <img src={user && user.image ?`https://opportunest-1.onrender.com/Images/${user.image}` : avatar} alt="profile_photo" className="profile-photo" />
                     <div className="span-content">
                       {user.basicdata?.length > 0 ? (
                         <>

@@ -22,7 +22,7 @@ const Front = () => {
         }
 
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/logup', {
+            const res = await axios.post('https://opportunest-1.onrender.com/api/auth/logup', {
                 email, 
                 password
             }, {

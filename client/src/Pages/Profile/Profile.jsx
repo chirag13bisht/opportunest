@@ -18,7 +18,7 @@ const Profile = () => {
     console.log(userId)
     const callAbout = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/auth/user', {
+            const res = await axios.get('https://opportunest-1.onrender.com/api/auth/user', {
                 withCredentials: true, // to include cookies
                 headers: {
                     Accept: "application/json",
@@ -40,7 +40,7 @@ const Profile = () => {
 
     const getalldata = async () => {
         try {
-          const res = await axios.get('http://localhost:5000/api/auth/getalldata', {
+          const res = await axios.get('https://opportunest-1.onrender.com/api/auth/getalldata', {
             withCredentials: true,
           });
     
@@ -77,7 +77,7 @@ const Profile = () => {
 
   
     const imageSrc = userData && userData.image 
-    ? `http://localhost:5000/Images/${userData.image}` // Display the uploaded image
+    ? `https://opportunest-1.onrender.com/Images/${userData.image}` // Display the uploaded image
     : avatar; // Default avatar if no image is uploaded
 
     

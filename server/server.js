@@ -13,8 +13,10 @@ app.use('/Images', express.static(path.join(__dirname, 'public/Images')));
 // Middleware to parse JSON requests
 app.use(cookieparser());
 
+const allowedOrigins = ['https://opportunest-nine.vercel.app'];
+
 app.use(cors({
-    origin: 'http://localhost:3000',  // Only allow this origin
+    origin: allowedOrigins,  // Only allow this origin
     credentials: true,                // Allow credentials (cookies, headers)
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed methods
     allowedHeaders: ['Content-Type', 'Authorization'],    // Allowed headers
