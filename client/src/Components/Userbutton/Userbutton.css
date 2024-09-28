@@ -1,0 +1,72 @@
+.userbutton-container {
+    position: relative;
+    display: inline-block;
+}
+.userbutton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    transition: transform 0.2s ease;
+}
+
+.userbutton:hover {
+    animation: shake 0.5s ease; /* Trigger the shake animation */
+}
+
+/* Keyframes for the shake animation */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-3px); }
+    20% { transform: translateX(3px); }
+    30% { transform: translateX(-3px); }
+    40% { transform: translateX(3px); }
+    50% { transform: translateX(-3px); }
+    60% { transform: translateX(3px); }
+    70% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+    90% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+
+.userbutton svg {
+    width: 24px;
+    height: 24px;
+}
+.userbutton svg path {
+    fill: #000000; /* Black color */
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 145%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 230px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.links {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    text-align: left;
+    font-size: 17px;
+    padding-top: 12px; /* Add padding at the top */
+    padding-bottom: 12px; /* Add padding at the bottom */
+}
+
+.links:hover {
+    background-color: #b3b2b2;
+}
