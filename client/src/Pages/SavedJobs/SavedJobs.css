@@ -1,0 +1,133 @@
+/* savedJobs.css */
+
+.savedjobs-maindiv {
+    max-width: 800px; /* Set max width for main container */
+    margin: 20px auto; /* Center the container */
+    padding: 20px; /* Add padding */
+    background-color: white; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+     /* Subtle shadow for depth */
+}
+
+.savedjobs-div {
+    border: 1px solid #ddd; /* Light border around each job */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside each job div */
+    margin-bottom: 15px; /* Space between jobs */
+    background-color: #ffffff; /* White background for job cards */
+    transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+.savedjobs-div:hover {
+    transform: scale(1.02); /* Scale up on hover */
+}
+
+.savedjobs-div h2 {
+    font-size: 1.5rem; /* Larger title */
+    color: #333; /* Dark color for title */
+    margin: 0 0 10px; /* Margin below title */
+}
+
+.savedjobs-div p {
+    margin: 5px 0; /* Margin for paragraphs */
+    color: #555; /* Slightly lighter text color */
+}
+
+.apply-button {
+    display: inline-block; /* Keep button inline */
+    padding: 10px 15px; /* Padding for button */
+    margin-top: 10px; /* Margin above button */
+    background-color: #007bff; /* Primary color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s; /* Transition for background color */
+}
+
+.apply-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+@media (max-width: 600px) {
+    .savedjobs-maindiv {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .savedjobs-div {
+        padding: 10px; /* Reduce padding for job cards */
+    }
+
+    .savedjobs-div h2 {
+        font-size: 1.3rem; /* Smaller title on small screens */
+    }
+
+    .apply-button {
+        padding: 8px 12px; /* Smaller button padding */
+    }
+}
+.savedjobs-maindiv {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.search-bar {
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.job-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between job cards */
+}
+
+.savedjobs-div {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.savedjobs-div:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.apply-button, .remove-button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.apply-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.remove-button {
+    background-color: #ff4d4d; /* Red color for remove */
+    color: white;
+    margin-left: 10px; /* Space between buttons */
+}
+
+.loading-spinner {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 50px;
+}
+.saved-jobs-title {
+    font-size: 2rem; /* Large font size */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center the title */
+    color: #33bd26; /* Color of the title */
+    font-weight: bold; /* Bold text */
+}

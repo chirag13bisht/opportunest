@@ -1,0 +1,17 @@
+.logout-button{
+    padding: 10px;
+    text-decoration: none;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    border-style: none;
+    font-size: 17px;
+    padding-top: 12px; /* Add padding at the top */
+    padding-bottom: 12px; /* Add padding at the bottom */
+}
+.logout-button:hover{
+    background-color: #b3b2b2;
+}
+.logout-button svg{
+    align-items: end;
+}

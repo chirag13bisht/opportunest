@@ -1,0 +1,293 @@
+/* Community Container Layout */
+.whole-div{
+    width: 100%;
+}
+.community-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    gap: 20px;
+    padding: 0 20px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Left, Middle, and Right Section */
+.community-left,
+.community-middle,
+.community-right {
+    padding: 20px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+/* Left Section (Profile Sidebar) */
+.community-left {
+    width: 20%;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-section img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-section span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 4%;
+}
+
+.profile-stats div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.profile-stats span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Middle Section (Post Feed) */
+.community-middle {
+    width: 55%;
+    background-color: #ffffff;
+}
+
+.share-post {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+}
+
+.share-post img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.share-button {
+    flex-grow: 1;
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    color: #333;
+    font-size: 16px;
+}
+
+.share-button:hover {
+    background-color: #e9e9e9;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.modal-header .username {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Modal Input */
+.post-input {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.post-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.post-button:hover {
+    background-color: #0056b3;
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-button:hover {
+    color: #007bff;
+}
+
+/* Post Content */
+.post-content {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.post-content .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+
+}
+
+
+.post-content img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-content .main-text-span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.post-content .second-span-text {
+    font-size: 14px;
+    color: #555;
+}
+.second-span-text{
+    margin-left: 2px;
+}
+.attends-span-text{
+    margin-left: 3px;
+    font-size: 14px;
+    color: #555;
+}
+.post-link{
+    text-decoration: none;
+    color: black;
+}
+/* Post Reaction Section */
+.like-comment-share {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.like, .comment, .share {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+}
+
+.like svg, .comment svg, .share svg {
+    margin-right: 5px;
+}
+
+.reaction {
+    font-size: 14px;
+}
+
+
+
+/* Right Section (Additional Content) */
+.community-right {
+    width: 20%;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .community-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .community-left, .community-middle, .community-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .share-button {
+        font-size: 14px;
+    }
+}

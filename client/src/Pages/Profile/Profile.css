@@ -1,0 +1,265 @@
+/* Container to center content and align flex items */
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 3%;
+    gap: 30px;
+}
+
+/* Styling for user content box */
+.user-content {
+    width: 40%;
+}
+.user-details{
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Image container to ensure consistent margins */
+.user-image-div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Rounded profile image with border and hover effect */
+.user-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 3px solid #4caf50;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect to make the profile image interactive */
+.user-image:hover {
+    transform: scale(1.1);
+}
+
+/* Styling for username */
+.username-div {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.username-span {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styling for profession text */
+.user-profession {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profession-span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #777;
+}
+
+/* Styling for followers count */
+.user-followers {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.followers-span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #4caf50;
+    font-weight: 500;
+}
+
+/* Other section, adjusted for proper width and alignment */
+.other-section {
+    width: 20%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-content,
+    .other-section {
+        width: 90%;
+    }
+}
+/* Container for editable details */
+.editable-details {
+    margin-top: 15px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Personal Information heading */
+.perInfo-div {
+    margin-bottom: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+}
+.perInfo-div svg{
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.perInfo {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #000000;
+}
+
+/* Styling for each field label and value pair */
+.fname-div, .lname-div, .profe-div, .place-div,.email-div {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 10px 0;
+    
+    font-size: 1rem;
+}
+
+/* Last item without a border */
+.place-div {
+    border-bottom: none;
+}
+
+/* Styling for field labels */
+.fname-index, .lname-index, .profe-index, .place-index,.email-index {
+    color: #777;
+    font-weight: 100;
+    width: 30%;
+    text-align: left;
+}
+
+/* Styling for field values */
+.fname-span, .lname-span, .profe-span, .place-span, .email-span {
+    margin-top: 4px;
+    color: #333;
+    font-weight: 100;
+    text-align: left;
+    width: 70%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .editable-details {
+        width: 100%;
+    }
+
+    .fname-index, .lname-index, .profe-index, .place-index, 
+    .fname-span, .lname-span, .profe-span, .place-span {
+        text-align: left;
+        width: 100%;
+        display: block;
+        padding: 5px 0;
+    }
+
+    .fname-div, .lname-div, .profe-div, .place-div {
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+.activity-content{
+    margin-top: 15px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+.activity-div{
+    margin-bottom: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;   
+}
+.activity-div svg{
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+.activity-head{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #000000;
+}
+.post-content-activity{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px; /* Gap between the share post and post content */
+    border-style: solid;
+    border-width: 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: gray;
+}
+.post-content-activity div {
+    display: flex;
+    align-items: start;
+    margin-top: 10px;
+  }
+  .post-content-activity .profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .like-comment-share-activity{
+    width: 100%;
+    margin-top: 10px;
+  }
+  .comment-activity,.share-activity{
+    width: 35%;
+    justify-content: baseline;
+    
+  }
+  .like-activity{
+    width: 30%;
+    justify-content: baseline;
+  }
+  .show-more{
+    display: flex;
+    margin: 10px auto;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+

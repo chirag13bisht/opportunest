@@ -1,0 +1,202 @@
+/* Ensure the parent container has full height for vertical centering */
+
+
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%; /* Optional: Background color for better visibility */
+}
+
+.search-div {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Adjust width as needed */
+    padding: 5px;
+    margin: 0 auto; /* Center horizontally */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    background-color: #fff; /* Optional: Background color */
+    width: 50%;
+
+}
+.search-div-1, .search-div-2{
+    position: relative;
+    display: flex;
+    width: 39%;
+}
+.search-div-1 svg,.search-div-2 svg{
+    width: 5%;
+    padding-left: 4px;
+}
+
+ .search-button {
+    margin: 10px 0; /* Space between elements */
+}
+
+.job-title-search, .place-search {
+    width: 39%; /* Full width within the container */
+    padding: 18px;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+}
+.job-title-search {
+    flex: 1; /* Takes up available space */ /* Space between input fields and separator */
+}
+.separator {
+    margin: 0 10px; /* Space around the separator */
+    color: #a6a6a6; /* Color of the separator */
+    font-size: 45px; /* Size of the separator */
+}
+.place-search {
+    flex: 1;
+    margin-right: 4px; /* Takes up available space */
+}
+
+.search-button {
+    width: 14%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3aca63; /* Button background color */
+    color: #fff; /* Button text color */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    background-color: #30db3e; /* Darker color on hover */
+}
+.section{
+    margin-top:3%;
+}
+.section-image-div{
+   
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.section-image{
+    width: 70%;
+}
+.main-job-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centers the row horizontally */
+    align-items: flex-start; /* Align items at the top (or adjust as needed) */
+    width: 100%; /* Ensure the main-job-div takes full width */
+    margin-top: 20px; 
+    /* Distributes the rows */
+  }
+  
+  .job-div-div {
+    width: 30%; /* Occupy 70% of the width for the job listings */
+    margin-right: 20px;
+    overflow-y: auto;
+    justify-content: center; /* Optional: spacing between columns */
+  }
+  .jobs-description-div-div{
+    border-width: 1px;
+    width: 30%;
+    background-color: #ffffff;
+    border-color: #9c9c9c;
+    position: sticky;
+    top: 15%;
+
+  }
+  .jobs-description-div {
+    border-style: solid;
+    border-width: 1px;
+    /* Occupy 30% of the width for the job description */
+    background-color: #ffffff; /* Optional: background for visual separation */
+    padding: 10px; /* Optional: padding inside the job description div */
+  }
+.job-divs {
+    
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 3%;
+    border-color: #9c9c9c;
+    position: relative;
+  }
+  
+  .job-divs h1 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .job-divs span {
+    display: block;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .p-status{
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .job-divs a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+  }
+  .job-divs svg{
+    width: 5%;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  .apply-button{
+    background-color: #3aca63;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  .p-description{
+    color:black;
+    font-size: 13px;
+  }
+  .dropdown {
+    position: absolute; /* Position it absolutely */
+    top: 100%; /* Position it directly below the input */
+    left: -21px; /* Align it to the left */
+    margin-top: 13px;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    width: 102%; /* Match the input width */
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block; 
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+
+}
+.dropdown-item svg{
+    padding-left: 4px;
+}
+.dropdown-item span{
+    padding-right: 4px;
+    margin-left:20px;
+}
+
+.dropdown-item:hover {
+    background: #f0f0f0;
+}
+
+  
+  
