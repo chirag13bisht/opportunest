@@ -22,7 +22,7 @@ const Front = () => {
         }
 
         try {
-            const res = await axios.post('https://opportunest-1.vercel.app/api/auth/logup', {
+            const res = await axios.post('https://opportunest-1.onrender.com/api/auth/logup', {
                 email, 
                 password
             }, {
@@ -31,9 +31,8 @@ const Front = () => {
 
             const data = res.data;
 
-            if (res.status === 200 && data.token) {
+            if (res.status === 200 && data) {
                 dispatch({ type: "USER", payload: true });
-                sessionStorage.setItem('token', data.token);
                 window.alert("Login successful");
                 navigate("/community");
             } else {
