@@ -31,8 +31,11 @@ router.post('/logup', async (req, res) => {
             res.cookie("jwtoken", token, {
                 expires: new Date(Date.now() + 25892000000), // Token expiry
                 httpOnly: true,  // Ensure it's not accessible via client-side scripts
+                secure: true,
                 sameSite: 'None' // Enable cross-origin cookie sharing,
             });
+
+            console.log("Cookie Set: jwtoken"); 
             
             // Direct password comparison (this assumes you are storing plain text passwords, which is not secure)
             if (password !== userLogin.password) {
