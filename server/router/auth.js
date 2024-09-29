@@ -12,49 +12,33 @@ router.get("/", (req, res) => {
 });
 
 // User login route
+
 router.post('/logup', async (req, res) => {
     try {
-        let token;
         const { email, password } = req.body;
 
-        if (!email || !password) {
-            return res.status(400).json({ error: "Please fill in all the data" });
-        }
-
+        // Authentication logic...
         const userLogin = await User.findOne({ email });
-       
-
-        if (userLogin) {
-
-            token = await userLogin.generateAuthToken();
-            
-           res.cookie('jwtoken', token, {
-    expires: new Date(Date.now() + 25892000000), // Token expiry
-    httpOnly: true,
-    secure: true, // Set secure true only in production
-    sameSite: 'None'
-});
-
-            console.log("Cookie Set: jwtoken"); 
-            
-            // Direct password comparison (this assumes you are storing plain text passwords, which is not secure)
-            if (password !== userLogin.password) {
-                return res.status(400).json({ error: 'Invalid credentials' });
-            }
-             else{
-              
-            res.json({ message: "Login successful" });
-             }
-            
-        } else {
-            res.status(400).json({ error: "User not found" });
+        if (!userLogin || password !== userLogin.password) {
+            return res.status(400).json({ error: 'Invalid credentials' });
         }
 
+        const token = await userLogin.generateAuthToken();
+
+        // Set cookie with options
+        res.cookie("jwtoken", token, {
+            expires: new Date(Date.now() + 25892000000), // Token expiry
+            httpOnly: true,
+            secure: true, // Ensure HTTPS
+            sameSite: 'None', // Allow cross-site requests
+        });
+
+        res.json({ message: "Login successful" });
     } catch (error) {
-        console.error(error);
         res.status(500).json({ error: "Server error" });
     }
 });
+
 
 router.post('/emailCheck', async (req, res) => {
     try {
