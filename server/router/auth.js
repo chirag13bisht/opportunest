@@ -31,7 +31,7 @@ router.post('/logup', async (req, res) => {
            res.cookie('jwtoken', token, {
     expires: new Date(Date.now() + 25892000000), // Token expiry
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production', // Set secure true only in production
+    secure: true, // Set secure true only in production
     sameSite: 'None'
 });
 
