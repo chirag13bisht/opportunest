@@ -51,14 +51,7 @@ const Nav = () => {
         }
     ];
 
-    useEffect(() => {
-        const cookieExists = checkCookie('jwtoken');
-        console.log('Cookie exists:', cookieExists); // Debugging log
-
-        if (!cookieExists) {
-            navigate('/'); // Redirect to home page if cookie is not present
-        }
-    }, [navigate]);
+  
 
     const handleResize = () => {
         if (window.innerWidth > 768) {
