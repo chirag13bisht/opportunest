@@ -96,7 +96,9 @@ const Nav = () => {
             }
         } catch (error) {
             console.error(error);
-            window.alert("Error checking email");
+             setvisible(false);
+             setvisibleM3(true);
+             window.alert("Invalid credentials");
         }
     };
 
