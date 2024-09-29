@@ -30,10 +30,11 @@ router.post('/logup', async (req, res) => {
             token = await userLogin.generateAuthToken();
             
            res.cookie("jwtoken", token, {
-    expires: new Date(Date.now() + 25892000000),
-    sameSite: 'None', // Allows cross-origin requests to work
-    secure: true, // Ensure this is set if using HTTPS
-    path: '/' // Set the path for the cookie
+               expires: new Date(Date.now() + 25892000000),
+               httpOnly: true,
+               sameSite: 'None', // Allows cross-origin requests to work
+               secure: true, // Ensure this is set if using HTTPS
+               path: '/' // Set the path for the cookie
 });
                
                
