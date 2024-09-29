@@ -11,12 +11,7 @@
         "src": "/api/(.*)",  
         "dest": "/server.js"  
       }
-    ],
-    "rewrites":[
-      {
-        "source":"/api/(.*)",
-        "destination":"https://opportunest-1.vercel.app"
-      }
     ]
+    
   }
   
