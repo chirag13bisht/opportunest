@@ -52,11 +52,12 @@ const Nav = () => {
     ];
 
     useEffect(() => {
-        const cookieExists = checkCookie('jwtoken');
-        console.log('Cookie exists:', cookieExists); // Debugging log
+        // Check if the token exists in sessionStorage
+        const token = sessionStorage.getItem('token');
+        console.log('Token exists in sessionStorage:', token); // Debugging log
 
-        if (!cookieExists) {
-            navigate('/'); // Redirect to home page if cookie is not present
+        if (!token) {
+            navigate('/'); // Redirect to home page if token is not present
         }
     }, [navigate]);
 
@@ -115,6 +116,7 @@ const Nav = () => {
                 window.alert("Incorrect password");
             } else {
                 dispatch({ type: "USER", payload: true });
+                sessionStorage.setItem('token', data.token);
                 window.alert("User logged in");
                 setvisibleM2(false);
                 navigate("/community");

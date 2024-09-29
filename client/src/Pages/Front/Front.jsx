@@ -31,8 +31,9 @@ const Front = () => {
 
             const data = res.data;
 
-            if (res.status === 200 && data) {
+            if (res.status === 200 && data.token) {
                 dispatch({ type: "USER", payload: true });
+                sessionStorage.setItem('token', data.token);
                 window.alert("Login successful");
                 navigate("/community");
             } else {
