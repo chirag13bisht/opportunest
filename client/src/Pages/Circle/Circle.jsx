@@ -16,7 +16,7 @@ const Circle = () => {
 
     const callAbout = async () => {
         try {
-            const res = await axios.get('https://opportunest-1.onrender.com/api/auth/user', {
+            const res = await axios.get('https://opportunest-1.vercel.app/api/auth/user', {
                 withCredentials: true, // to include cookies
                 headers: {
                     Accept: "application/json",
@@ -38,7 +38,7 @@ const Circle = () => {
 
     const getalldata = async () => {
         try {
-            const res = await axios.get('https://opportunest-1.onrender.com/api/auth/getalldata', {
+            const res = await axios.get('https://opportunest-1.vercel.app/api/auth/getalldata', {
                 withCredentials: true,
             });
 
@@ -68,7 +68,7 @@ const Circle = () => {
     const FollowingUser = async () => {
 
         try {
-            const res = await axios.post('https://opportunest-1.onrender.com/api/auth/followinguser', {
+            const res = await axios.post('https://opportunest-1.vercel.app/api/auth/followinguser', {
                 logedUserId,
                 FollowersId,
             });
@@ -120,7 +120,7 @@ const Circle = () => {
                         filteredUsers.map((user, index) => (
                             <div className="user-card" key={index}>
                                 <img
-                                    src={user && user.image ? `https://opportunest-1.onrender.com/Images/${user.image}` : avatar}
+                                    src={user && user.image ? `https://opportunest-1.vercel.app/Images/${user.image}` : avatar}
                                     alt={user.name}
                                     className="user-image"
                                 />

@@ -22,7 +22,7 @@ const Front = () => {
         }
 
         try {
-            const res = await axios.post('https://opportunest-1.onrender.com/api/auth/logup', {
+            const res = await axios.post('https://opportunest-1.vercel.app/api/auth/logup', {
                 email, 
                 password
             }, {

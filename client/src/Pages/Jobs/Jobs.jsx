@@ -23,7 +23,7 @@ const Jobs = () => {
 
   const callAbout = async () => {
       try {
-          const res = await axios.get('https://opportunest-1.onrender.com/api/auth/user', {
+          const res = await axios.get('https://opportunest-1.vercel.app/api/auth/user', {
               withCredentials: true, // to include cookies
               headers: {
                   Accept: "application/json",

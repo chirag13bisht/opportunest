@@ -31,7 +31,6 @@ router.post('/logup', async (req, res) => {
             res.cookie("jwtoken", token, {
                 expires: new Date(Date.now() + 25892000000), // Token expiry
                 httpOnly: true,  // Ensure it's not accessible via client-side scripts
-                secure: true,    // Ensure cookies are only sent over HTTPS
                 sameSite: 'None' // Enable cross-origin cookie sharing,
             });
             

@@ -12,7 +12,7 @@ const Logout = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.get('https://opportunest-1.onrender.com/api/auth/logout', {
+            const res = await axios.get('https://opportunest-1.vercel.app/api/auth/logout', {
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json"

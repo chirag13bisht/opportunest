@@ -13,7 +13,7 @@ const AccountDetailsModal = ({ isOpen, onClose }) => {
 
   const callAbout = async () => {
     try {
-      const res = await axios.get('https://opportunest-1.onrender.com/api/auth/user', {
+      const res = await axios.get('https://opportunest-1.vercel.app/api/auth/user', {
         withCredentials: true,
       });
 
@@ -43,7 +43,7 @@ const AccountDetailsModal = ({ isOpen, onClose }) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('https://opportunest-1.onrender.com/api/auth/userdata', {
+      const res = await axios.post('https://opportunest-1.vercel.app/api/auth/userdata', {
         email,
         firstname,
         lastname,

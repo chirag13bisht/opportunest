@@ -42,8 +42,8 @@ const Activity = ({ userData ,LogedUserId}) => {
     const updateLikeorUnlike = async (postId, userId, action) => {
         try {
             const url = action === 'like'
-                ? 'https://opportunest-1.onrender.com/api/auth/like'
-                : 'https://opportunest-1.onrender.com/api/auth/unlike'; // Assuming this endpoint for unlike
+                ? 'https://opportunest-1.vercel.app/api/auth/like'
+                : 'https://opportunest-1.vercel.app/api/auth/unlike'; // Assuming this endpoint for unlike
 
             const response = await axios({
                 method: action === 'like' ? 'post' : 'delete',
@@ -73,7 +73,7 @@ const Activity = ({ userData ,LogedUserId}) => {
     };
 
     const imageSrc = userData && userData.image 
-    ? `https://opportunest-1.onrender.com/Images/${userData.image}` // Display the uploaded image
+    ? `https://opportunest-1.vercel.app/Images/${userData.image}` // Display the uploaded image
     : avatar; // Default avatar if no image is uploaded
 
     return (

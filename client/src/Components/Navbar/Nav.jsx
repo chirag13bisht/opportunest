@@ -82,7 +82,7 @@ const Nav = () => {
         }
 
         try {
-            const res = await axios.post('https://opportunest-1.onrender.com/api/auth/emailCheck', { email });
+            const res = await axios.post('https://opportunest-1.vercel.app/api/auth/emailCheck', { email });
 
             if (res.status === 400 || !res.data) {
                 setvisible(false);
@@ -109,7 +109,7 @@ const Nav = () => {
         }
 
         try {
-            const res = await axios.post('https://opportunest-1.onrender.com/api/auth/logup', { email, password }, { withCredentials: true });
+            const res = await axios.post('https://opportunest-1.vercel.app/api/auth/logup', { email, password }, { withCredentials: true });
 
             if (res.status === 400 || !res.data) {
                 window.alert("Incorrect password");
@@ -133,7 +133,7 @@ const Nav = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post('https://opportunest-1.onrender.com/api/auth/signin', { email, password });
+            const res = await axios.post('https://opportunest-1.vercel.app/api/auth/signin', { email, password });
 
             if (res.status === 422 || !res.data) {
                 window.alert("Invalid registration");
@@ -152,7 +152,7 @@ const Nav = () => {
 
     const callAbout = async () => {
         try {
-            const res = await axios.get('https://opportunest-1.onrender.com/api/auth/user', { withCredentials: true });
+            const res = await axios.get('https://opportunest-1.vercel.app/api/auth/user', { withCredentials: true });
 
             if (res.status === 401) {
                 setuserData(null);
