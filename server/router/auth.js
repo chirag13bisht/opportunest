@@ -29,14 +29,15 @@ router.post('/logup', async (req, res) => {
 
             token = await userLogin.generateAuthToken();
             
-            res.cookie("jwtoken", token, {
-                expires: new Date(Date.now() + 25892000000), // Token expiry
-                  httpOnly: true,
-                  secure: true, // Ensure HTTPS
-                  sameSite: 'None' // Allows cross-origin requests to work
+           res.cookie("jwtoken", token, {
+    expires: new Date(Date.now() + 25892000000),
+    sameSite: 'None', // Allows cross-origin requests to work
+    secure: true, // Ensure this is set if using HTTPS
+    path: '/' // Set the path for the cookie
+});
                
                
-            });
+          
 
             console.log("Cookie Set: jwtoken"); 
             
