@@ -18,7 +18,7 @@ const Routing = () => {
       
         <Routes>
          <Route path="/" element={<Front/>}/>
-          {state ? ( // Check if user is logged in
+          {state ? (
           <>
             <Route path="/community" element={<Community/>}/>
             <Route path="/jobs" element={<Jobs/>}/>
