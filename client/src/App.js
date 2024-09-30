@@ -1,4 +1,4 @@
-import React, { useContext,useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Front from './Pages/Front/Front'
 import { BrowserRouter,Route,Routes,Navigate } from 'react-router-dom'
 import Nav from './Components/Navbar/Nav'
