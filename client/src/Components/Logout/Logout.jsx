@@ -23,7 +23,8 @@ const Logout = () => {
             if (res.status === 200) {
                 dispatch({ type: "USER", payload: false });
                 window.alert("Logout successful");
-                navigate("/login");
+                
+                navigate("/");
             } else {
                 window.alert("Logout error");
                 console.log("error");
