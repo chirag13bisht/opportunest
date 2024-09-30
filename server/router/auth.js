@@ -337,12 +337,14 @@ router.get('/logout', authenticate, async (req, res) => {
         const rootUser = req.rootUser;
         const tokenToRemove = req.token;
 
+         res.clearCookie('jwtoken', { path: '/' });
+
         // Remove the token from the user's tokens array
         rootUser.tokens = rootUser.tokens.filter((tokenObj) => tokenObj.token !== tokenToRemove);
         await rootUser.save();
 
         // Clear the JWT cookie
-        res.clearCookie('jwtoken', { path: '/' });
+       
         res.status(200).json({ message: "User logged out successfully" });
     } catch (err) {
         console.error('Logout Error:', err);
