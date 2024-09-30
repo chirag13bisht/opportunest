@@ -328,6 +328,9 @@ router.post('/followinguser', async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 });
+router.get('/protected', authenticate, (req, res) => {
+    res.status(200).json({ message: 'This is protected data', user: req.rootUser });
+});
 
 router.get('/logout',(req,res)=>{
     res.clearCookie('jwtoken',{path:'/'});

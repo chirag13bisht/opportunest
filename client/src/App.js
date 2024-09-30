@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext,useEffect } from 'react'
 import Front from './Pages/Front/Front'
-import { BrowserRouter,Route,Routes } from 'react-router-dom'
+import { BrowserRouter,Route,Routes,Navigate} from 'react-router-dom'
 import Nav from './Components/Navbar/Nav'
 import { useReducer,createContext } from 'react'
 import { initialState, reducer } from './Components/reducer/useReducer'
@@ -9,10 +9,12 @@ import Jobs from './Pages/Jobs/Jobs'
 import Profile from './Pages/Profile/Profile'
 import SavedJobs from './Pages/SavedJobs/SavedJobs'
 import Circle from './Pages/Circle/Circle'
+import axios from './Utils/axiosConfig'
 
 export const UserContext = createContext();
 
 const Routing = () => {
+  const { state } = useContext(UserContext);
   return (
     <div>
       
@@ -38,6 +40,22 @@ const Routing = () => {
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
+  useEffect(() => {
+    // Function to check authentication status
+    const checkAuth = async () => {
+      try {
+        const res = await axios.get('/api/auth/protected'); // Adjust the endpoint as needed
+        if (res.status === 200) {
+          dispatch({ type: 'USER', payload: { isAuthenticated: true, user: res.data.user } });
+        }
+      } catch (error) {
+        dispatch({ type: 'USER', payload: { isAuthenticated: false, user: null } });
+      }
+    };
+
+    checkAuth();
+  }, [dispatch]);
+
 
    
     return (
