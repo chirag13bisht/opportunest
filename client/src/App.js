@@ -1,6 +1,6 @@
 import React, { useContext,useEffect } from 'react'
 import Front from './Pages/Front/Front'
-import { BrowserRouter,Route,Routes } from 'react-router-dom'
+import { BrowserRouter,Route,Routes,Navigate } from 'react-router-dom'
 import Nav from './Components/Navbar/Nav'
 import { useReducer,createContext,useContext } from 'react'
 import { initialState, reducer } from './Components/reducer/useReducer'
