@@ -332,10 +332,23 @@ router.get('/protected', authenticate, (req, res) => {
     res.status(200).json({ message: 'This is protected data', user: req.rootUser });
 });
 
-router.post('/logout',(req,res)=>{
-    res.clearCookie('jwtoken',{path:'/'});
-    res.status(200).send("user logout");
-})
+router.get('/logout', authenticate, async (req, res) => {
+    try {
+        const rootUser = req.rootUser;
+        const tokenToRemove = req.token;
+
+        // Remove the token from the user's tokens array
+        rootUser.tokens = rootUser.tokens.filter((tokenObj) => tokenObj.token !== tokenToRemove);
+        await rootUser.save();
+
+        // Clear the JWT cookie
+        res.clearCookie('jwtoken', { path: '/' });
+        res.status(200).json({ message: "User logged out successfully" });
+    } catch (err) {
+        console.error('Logout Error:', err);
+        res.status(500).json({ message: "Logout failed" });
+    }
+});
 
  
   
