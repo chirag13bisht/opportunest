@@ -17,18 +17,18 @@ const Routing = () => {
     <div>
       
         <Routes>
-         <Route path="/" element={<Front />} />
+         <Route path="/" element={<Front/>}/>
           {state ? ( // Check if user is logged in
           <>
-            <Route path="/community" element={<Community />} />
-            <Route path="/jobs" element={<Jobs />} />
-            <Route path="/jobs/:id" element={<Jobs />} />
-            <Route path="/profile/:userFirstname-userLastname/:userId" element={<Profile />} />
-            <Route path="/savedjobs/:userId" element={<SavedJobs />} />
-            <Route path="/mycircle" element={<Circle />} />
+            <Route path="/community" element={<Community/>}/>
+            <Route path="/jobs" element={<Jobs/>}/>
+            <Route path="/jobs/:id" element={<Jobs/>}/>
+            <Route path="/profile/:userFirstname-userLastname/:userId" element={<Profile/>}/>
+            <Route path="/savedjobs/:userId" element={<SavedJobs/>}/>
+            <Route path="/mycircle" element={<Circle/>}/>
           </>
         ) : (
-          <Route path="*" element={<Navigate to="/" />} /> // Redirect to front if logged out
+          <Route path="*" element={<Navigate to="/"/>}/>
         )}
         </Routes>
 
