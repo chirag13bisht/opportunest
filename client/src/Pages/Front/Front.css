@@ -6,6 +6,7 @@
     text-align: center;
     width: 50%;
     margin-top: 4%;
+    box-sizing: border-box;
 }
 .title{
     color: #4CAF50;
@@ -18,6 +19,7 @@
     flex-direction: column;
     width: 50%;
     text-align: center;
+    box-sizing: border-box;
 }
 .what_are_we{
     color: rgb(14, 13, 13);
@@ -116,6 +118,7 @@ a{
     text-align: center;
     justify-content: center;
     align-items: center;
+    
 }
 .what_is_opportunest{
     font-family: 'Poppins', sans-serif;
@@ -123,8 +126,6 @@ a{
 }
 .about_opportunest_div{
     width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
     text-align: center;
     justify-content: center;
     align-items: center;   

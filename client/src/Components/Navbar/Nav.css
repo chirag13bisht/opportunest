@@ -10,6 +10,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for visual separation */
     z-index: 1000; /* Ensure it's above other content */
     padding: 10px 20px; /* Add padding for spacing */
+    box-sizing: border-box;
     
 }
 
