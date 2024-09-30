@@ -332,7 +332,7 @@ router.get('/protected', authenticate, (req, res) => {
     res.status(200).json({ message: 'This is protected data', user: req.rootUser });
 });
 
-router.get('/logout',(req,res)=>{
+router.post('/logout',(req,res)=>{
     res.clearCookie('jwtoken',{path:'/'});
     res.status(200).send("user logout");
 })
