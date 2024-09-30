@@ -1,15 +1,22 @@
+
 const jwt = require("jsonwebtoken");
 const User = require("../model/userSchema");
 
 const authenticate = async (req, res, next) => {
     try {
+        if (!process.env.JWT_SECRET) {
+            throw new Error('SECRET_KEY not defined');
+        }
+        
         const token = req.cookies.jwtoken;
        
+
         if (!token) {
-            return res.status(401).json({ message: 'No token provided' });
+            return res.status(401).send('No token provided');
         }
 
         const verifyToken = jwt.verify(token, process.env.JWT_SECRET);
+      
 
         const rootUser = await User.findOne({
             _id: verifyToken._id,
@@ -17,7 +24,7 @@ const authenticate = async (req, res, next) => {
         });
 
         if (!rootUser) {
-            return res.status(401).json({ message: 'User not found' });
+            throw new Error('User not found');
         }
 
         req.token = token;
@@ -26,15 +33,13 @@ const authenticate = async (req, res, next) => {
         next();
     } catch (error) {
         console.log('Error:', error);
-        
         if (error.name === 'TokenExpiredError') {
-            return res.status(401).json({ message: 'Token expired' });
-        } else if (error.name === 'JsonWebTokenError') {
-            return res.status(401).json({ message: 'Invalid token' });
-        } else {
-            return res.status(500).json({ message: 'Server error during authentication' });
+            return res.status(401).send('Token expired');
         }
+        res.status(401).send('Unauthorized: Invalid token');
     }
 };
+ 
 
 module.exports = authenticate;
+
