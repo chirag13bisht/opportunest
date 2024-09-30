@@ -21,7 +21,7 @@ const Logout = () => {
             });
 
             if (res.status === 200) {
-                dispatch({ type: "USER", payload:{ isAuthenticated: false, user: null } });
+                dispatch({ type: "USER", payload: false });
                 window.alert("Logout successful");
                 
                 navigate("/");
