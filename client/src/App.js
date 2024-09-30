@@ -1,6 +1,6 @@
 import React from 'react'
 import Front from './Pages/Front/Front'
-import { BrowserRouter,Route,Routes } from 'react-router-dom'
+import { BrowserRouter,Route,Routes,Navigate } from 'react-router-dom'
 import Nav from './Components/Navbar/Nav'
 import { useReducer,createContext } from 'react'
 import { initialState, reducer } from './Components/reducer/useReducer'
@@ -13,6 +13,7 @@ import Circle from './Pages/Circle/Circle'
 export const UserContext = createContext();
 
 const Routing = () => {
+  const { state } = useContext(UserContext);
   return (
     <div>
       
