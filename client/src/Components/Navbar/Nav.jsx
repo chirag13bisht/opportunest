@@ -169,15 +169,11 @@ const Nav = () => {
     };
 
    useEffect(() => {
-    let interval;
     if (state) {
         callAbout(); // Initial call
-        interval = setInterval(callAbout, 5000); // Continuously call every 5 seconds
     } else {
         setuserData(null); // Clear user data on logout
     }
-
-    return () => clearInterval(interval); // Cleanup interval on component unmount or state change
 }, [state]);
 
 
