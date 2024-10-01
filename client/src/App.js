@@ -9,8 +9,6 @@ import Jobs from './Pages/Jobs/Jobs';
 import Profile from './Pages/Profile/Profile';
 import SavedJobs from './Pages/SavedJobs/SavedJobs';
 import Circle from './Pages/Circle/Circle';
-import Login from './Pages/Login/Login';
-import Logout from './Pages/Logout/Logout';
 import Footer from './Components/Footer/footer';
 import axios from './Utils/axiosConfig';
 import { initialState, reducer } from './Components/reducer/useReducer';
@@ -23,12 +21,6 @@ const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<Front />} />
-            {!state.isAuthenticated && (
-                <>
-                    <Route path="/login" element={<Login />} />
-                    {/* Add other public routes here */}
-                </>
-            )}
             {state.isAuthenticated && (
                 <>
                     <Route path="/community" element={<Community />} />
@@ -37,7 +29,6 @@ const AppRoutes = () => {
                     <Route path="/profile/:userFirstname-userLastname/:userId" element={<Profile />} />
                     <Route path="/savedjobs/:userId" element={<SavedJobs />} />
                     <Route path="/mycircle" element={<Circle />} />
-                    <Route path="/logout" element={<Logout />} />
                     {/* Add other protected routes here */}
                 </>
             )}
