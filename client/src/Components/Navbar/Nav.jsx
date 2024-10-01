@@ -109,7 +109,7 @@ const Nav = () => {
             if (res.status === 400 || !res.data) {
                 window.alert("Incorrect password");
             } else {
-                dispatch({ type: "USER", payload: true });
+                dispatch({ type: 'USER', payload: { isAuthenticated: true, user: res.data.user } });
                 window.alert("User logged in");
                 setvisibleM2(false);
                 navigate("/community");
@@ -232,7 +232,7 @@ const Nav = () => {
                     </ul>
 
                     <div className='nav_signin_div'>
-                        {userData ? (
+                        {state.isAuthenticated ? (
                             <Userbutton userId={userId} userFirstname={userFirstname} userLastname={userLastname} />
                         ) : (
                             <button className='nav_signin_button' onClick={() => setvisible(true)}>
