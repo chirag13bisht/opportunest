@@ -32,7 +32,7 @@ const Front = () => {
             const data = res.data;
 
             if (res.status === 200 && data) {
-                dispatch({ type: "USER", payload: true });
+                dispatch({ type: 'USER', payload: { isAuthenticated: true, user: res.data.user } });
                 window.alert("Login successful");
                 navigate("/community");
             } else {
