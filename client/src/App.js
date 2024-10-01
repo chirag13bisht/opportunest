@@ -14,6 +14,7 @@ import axios from './Utils/axiosConfig'
 export const UserContext = createContext();
 
 const Routing = () => {
+  const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <div>
       
