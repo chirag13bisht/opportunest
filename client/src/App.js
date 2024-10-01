@@ -20,7 +20,7 @@ const Routing = () => {
       
         <Routes>
          <Route path="/" element={<Front/>}/>
-          {state.isAuthenticated ? (
+          {state ? (
           <>
             <Route path="/community" element={<Community/>}/>
             <Route path="/jobs" element={<Jobs/>}/>
