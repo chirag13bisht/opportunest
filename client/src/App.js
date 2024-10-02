@@ -12,6 +12,9 @@ import Circle from './Pages/Circle/Circle';
 import Footer from './Components/Footer/footer';
 import axios from './Utils/axiosConfig';
 import { initialState, reducer } from './Components/reducer/useReducer';
+import logo from '../../client/src/image/logo.png';
+import './App.css';
+import ContactUs from './Pages/ContactUs/ContactUs';
 
 export const UserContext = createContext();
 
@@ -29,6 +32,7 @@ const AppRoutes = () => {
                     <Route path="/profile/:userFirstname-userLastname/:userId" element={<Profile />} />
                     <Route path="/savedjobs/:userId" element={<SavedJobs />} />
                     <Route path="/mycircle" element={<Circle />} />
+                    <Route path='/contactus' element={<ContactUs/>}/>
                     {/* Add other protected routes here */}
                 </>
             )}
@@ -65,7 +69,7 @@ const App = () => {
         // Redirect to /community if authenticated and not already on a protected route
         if (state.isAuthenticated) {
             const currentPath = window.location.pathname;
-            const protectedPaths = ['/community', '/jobs', '/profile', '/savedjobs', '/mycircle'];
+            const protectedPaths = ['/community', '/jobs', '/profile', '/savedjobs', '/mycircle','/contactus'];
             const isProtected = protectedPaths.some(path => currentPath.startsWith(path));
             if (!isProtected) {
                 navigate('/community');
@@ -74,7 +78,7 @@ const App = () => {
     }, [state.isAuthenticated, navigate]);
 
     if (loading) {
-        return <div>Loading...</div>; // Display a loading indicator while checking auth
+        return <div className='logomaker-div'><img src={logo} alt='logomaker' className='logomaker'/></div>; // Display a loading indicator while checking auth
     }
 
     return (
