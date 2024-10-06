@@ -197,6 +197,163 @@
 .dropdown-item:hover {
     background: #f0f0f0;
 }
+.jobs-description-new-div{
+  display: none;
+}
+.job-title-search:hover, .place-search:hover {
+  border-bottom-color: #3aca63; /* Green border on hover */
+}
 
+/* Optional: Add focus effect */
+.job-title-search:focus, .place-search:focus {
+  outline: none; /* Remove default outline */
+}
+
+@media(max-width:980px){
+  .search-div{
+    width: 60%;
+  }
+} 
+@media(max-width:768px){
+  .search-button{
+    display: none;
+  }
+  .job-div-div{
+    width: 80%;
+    margin-right: 0;
+  }
+  .jobs-description-div-div{
+    display: none;
+  }
+  .search-div-1 svg,.search-div-2 svg{
+         display: none;
+  }
+  .dropdown-item svg{
+    display: none;
+  }
+  .jobs-description-new-div{
+    display: block;
+
+  }
+  .jobs-description-screen {
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color: #fff;
+    padding: 1rem;
+    z-index: 1100;
+    height: 100%;
+    animation: slideIn 0.3s forwards;
+   
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.jobs-description-screen-div{
+  border-style: solid;
+  border-width: 1px;
+  /* Occupy 30% of the width for the job description */
+  background-color: #ffffff; /* Optional: background for visual separation */
+  padding: 10px;
+}
+
+.mobile-display-back-button{
+  width: auto;
+  padding: 8px;
+    border-radius: 4px;
+    border: none;
+  cursor: pointer;
+  background-color: black;
+  color: #ffffff;
+}
+.mobile-display-job-description-title{
+  margin-top: 4%;
+}
+.mobile-display-job-description-p{
+  margin-top: 2%;
+}
+.mobile-display-apply-button{
+  background-color: #3aca63;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin-top: 2%;
+}
+
+
+}
+@media (max-width: 768px) {
+  .search-div {
+    flex-direction: column;
+    width: 90%; /* Take more width on smaller screens */
+    background-color: white; /* Subtle background color */
+    padding: 15px; /* Add padding for better spacing */
+    border-radius: 8px; /* Rounded corners */ /* Light border */
+    box-shadow: none;
+    margin-top: 20px;
+  }
+
+  .search-div-1, .search-div-2 {
+    width: 100%; /* Full width for each input field */
+    margin-bottom: 15px; /* Space between input fields */
+  }
+
+  .search-div-1 {
+    border-bottom: none; /* Remove bottom border */
+  }
+
+  .job-title-search, .place-search {
+    width: 100%; /* Full width */
+    padding: 15px; /* Make input more spacious */
+    font-size: 16px; /* Slightly larger font */
+    border: 1px solid #ddd; /* Light border for input fields */
+    border-radius: 6px; /* Rounded corners for inputs */
+  }
+
+  .search-div-1 svg, .search-div-2 svg {
+    display: none; /* Hide the icons inside inputs */
+  }
+
+  .separator {
+    display: none; /* Hide the separator */
+  }
+
+  .jobs-description-new-div {
+    display: block; /* Enable jobs description for mobile */
+  }
+
+  .search-div svg {
+    display: none; /* Hide icons for small screens */
+  }
+  .dropdown{
+    left: 0;
+  }
+
+  .dropdown-item svg {
+    display: none; /* Hide dropdown icons */
+  }
+
+  .search-button {
+    display: none; /* Keep the button hidden */
+  }
+
+  /* Optional: Add a subtle hover effect for input fields */
+  .job-title-search:hover, .place-search:hover {
+    border-bottom-color: #3aca63; /* Green border on hover */
+  }
+
+  /* Optional: Add focus effect */
+  .job-title-search:focus, .place-search:focus {
+    outline: none; /* Remove default outline */
   
+  }
+} 
   
