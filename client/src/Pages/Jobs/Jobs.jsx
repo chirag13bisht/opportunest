@@ -139,7 +139,14 @@ const Jobs = () => {
    
   };
 
-  
+  const handleBackClick = () => {
+    setSelectedJob(null);
+};
+const handleKeyDown = (event) => {
+  if (event.key === 'Enter') {
+      handleSearchClick();
+  }
+};
 
   return (
     <>
@@ -154,6 +161,7 @@ const Jobs = () => {
               className='job-title-search'
               value={searchItems}
               onChange={(e) => {setSearchItems(e.target.value);setItemsisSearched(true)}}
+              onKeyDown={handleKeyDown}
               
             />
             {itemsIsSearched && searchItems && filteredItems.length > 0 && (
@@ -177,7 +185,7 @@ const Jobs = () => {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
               <path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" />
             </svg>
-            <input placeholder='search by place' className='place-search' value={searchLocation} onChange={(e) => {setSearchLocation(e.target.value);setLocationisSearched(true)}}/>
+            <input placeholder='search by place' className='place-search' value={searchLocation} onChange={(e) => {setSearchLocation(e.target.value);setLocationisSearched(true)}} onKeyDown={handleKeyDown}/>
             {LocationIsSearched && searchLocation && FilteredLocation.length > 0 && (
               <div className='dropdown'>
                 {FilteredLocation.map((job) => (
@@ -247,6 +255,33 @@ const Jobs = () => {
                   </button>
                   <p><strong>Job Description:</strong> {selectedJob.description}</p>
                 </div>
+              )}
+             
+            </div>
+            <div className='jobs-description-new-div'>
+            {selectedJob && (
+                 <div className='jobs-description-screen'>
+                
+                 <div className='jobs-description-screen-div' >
+                 <button className='mobile-display-back-button' onClick={handleBackClick}>
+                     &larr; Back
+                 </button>
+                     <h2 className='mobile-display-job-description-title'>{selectedJob.title}</h2>
+                     <p className='mobile-display-job-description-p'><strong>Company:</strong> {selectedJob.company_name}</p>
+                     <p className='mobile-display-job-description-p'><strong>Location:</strong> {selectedJob.location}</p>
+                     <p className='mobile-display-job-description-p'><strong>Published:</strong> {selectedJob.formatted_relative_time}</p>
+                     {selectedJob.salary && (
+                         <p className='mobile-display-job-description-p'><strong>Salary:</strong> ${selectedJob.salary.min} - ${selectedJob.salary.max} ({selectedJob.salary.type})</p>
+                     )}
+                     {selectedJob.locality && (
+                         <p className='mobile-display-job-description-p'><strong>Locality:</strong> {selectedJob.locality}</p>
+                     )}
+                     <button className='mobile-display-apply-button' onClick={() => window.location.href = selectedJob.link}>
+                         Apply for Job
+                     </button>
+                     <p className='mobile-display-job-description-p'> <strong>Job Description:</strong> {selectedJob.description}</p>
+                 </div>
+             </div>
               )}
             </div>
           </div>
