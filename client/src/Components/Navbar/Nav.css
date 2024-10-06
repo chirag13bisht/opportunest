@@ -1,477 +1,414 @@
-/* Navigation Content */
+/* Nav.css */
+
+/* Reset Styles */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Container */
 .nav_content {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Hide any overflow */
-    position: sticky; /* Make the navbar fixed */
-    top: 0; /* Stick the navbar to the top */
-    width: 100%; /* Ensure the navbar spans the full width of the page */
-    background-color: white; /* Set a background color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for visual separation */
-    z-index: 1000; /* Ensure it's above other content */
-    padding: 10px 20px; /* Add padding for spacing */
-    box-sizing: border-box;
-    
-}
-
-.log_div, .list_div, .nav_signin_div {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-}
-
-/* Adjust widths for desktop */
-.logo_div {
-    width: 25%;
-    text-align: end;
-    
-}
-.list_div {
-}
-.logo_name {
-    color: #4CAF50;
-    font-size: 25px;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: 'Poppins', sans-serif;
 }
-.nav_signin_div {
-    width: 25%;
+
+/* Logo Styles */
+.logo_div {
+    flex: 1;
 }
 
-.list {
+.logo_name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Navigation Links for Desktop */
+.nav_links {
     display: flex;
     list-style: none;
-    justify-content: center;
-    align-items: center;
+    gap: 20px;
 }
 
-li {
-    padding-left: 40px;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Sign In Button */
-.nav_signin_button {
-    width: 100%; /* Ensure full width on smaller screens */
-    max-width: 100px; /* Limit the width on larger screens */
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
-    background-color: black;
-    color: white;
+.nav_item {
+    position: relative;
     cursor: pointer;
+    font-size: 16px;
+    color: #333333;
+    transition: color 0.2s;
 }
 
-@media (max-width: 768px) {
-    .nav_signin_button {
-        width: 90%; /* Take up more space on smaller screens */
-    }
+.nav_item:hover {
+    color: #0288D1;
 }
 
-/* Modal Overlay */
-.custom_overlay {
+.dropdown_nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 200px;
+    display: none;
+    z-index: 1003;
+}
+
+.nav_item:hover .dropdown_nav {
+    display: block;
+}
+
+.dropdown_nav p {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+.dropdown_nav button {
+    padding: 8px 12px;
+    background-color: #0288D1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dropdown_nav button:hover {
+    background-color: #026aa7;
+}
+
+/* Userbutton for Desktop */
+.userbutton_div {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sign_in_button {
+    padding: 8px 16px;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.sign_in_button:hover {
+    background-color: #555555;
+}
+
+/* Hamburger Icon for Mobile */
+.hamburger {
+    font-size: 28px;
+    cursor: pointer;
+    color: #333333;
+    display: none; /* Hidden by default, shown on mobile */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Hidden off-screen to the right */
+    width: 300px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px; /* Space for close icon */
+}
+
+.sidebar_open {
+    right: 0; /* Slide in */
+}
+
+/* Close Icon inside Sidebar */
+.close_icon {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333333;
+}
+
+/* Navigation Links inside Sidebar */
+.sidebar_links {
+    list-style: none;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.sidebar_item {
+    padding: 15px 0;
+    font-size: 18px;
+    color: #333333;
+    cursor: pointer;
+    position: relative;
+    border-bottom:1px solid #b3b2b2;
+}
+
+.sidebar_item:hover {
+    background-color: #b3b2b2;
+}
+
+.sidebar_dropdown {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.sidebar_dropdown p {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+.sidebar_dropdown button {
+    padding: 8px 12px;
+    background-color: #0288D1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sidebar_dropdown button:hover {
+    background-color: #026aa7;
+}
+
+/* Userbutton inside Sidebar for Mobile */
+.userbutton_div.mobile-only {
+    justify-content: center;
+    margin-top: 9px;
+    margin-right: 4px;
+}
+
+/* Overlay for Background Blur when Sidebar is Open */
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1001;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+}
+.userbutton_div.mobile-only{
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Show Hamburger on Mobile */
+    .hamburger {
+        display: block;
+    }
+    .userbutton_div{
+        flex: 0 0 ;
+    }
+    /* Hide Desktop Navigation Links and Userbutton */
+    .desktop-only {
+        display: none;
+    }
+
+    /* Show Sidebar when open */
+    .sidebar_open {
+        right: 0;
+    }
+
+    /* Hide Userbutton in Sidebar by default, shown if needed */
+    .userbutton_div.desktop-only {
+        display: none;
+    }
+
+    .userbutton_div.mobile-only {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Hide Sidebar on Desktop */
+    .sidebar {
+        display: none;
+    }
+
+    /* Show Desktop Navigation Links and Userbutton */
+    .desktop-only {
+        display: flex;
+    }
+
+    .mobile-only {
+        display: none;
+    }
 }
 
 /* Modal Styles */
-.custom_modal {
-    width: 90%; /* Make it fluid for small screens */
-    max-width: 400px; /* Limit the width for larger screens */
-    height: auto;
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1002;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.modal_overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
 }
 
-
-
-/* Close Button */
-.close_button {
+.modal {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 2001;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal_header h2 {
+    font-size: 24px;
+    color: #333333;
+}
+
+.close_button {
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 24px;
     cursor: pointer;
-    color: #555;
+    color: #555555;
 }
 
 .close_button:hover {
-    color: #000;
-}
-.model_sigin{
-    margin-top: 15%;
-    font-size: 27px;
-    font-family: 'Poppins', sans-serif;
-}
-.model_privacy_div{
-    margin-right: 25px;
-    margin-left: 25px;
-}
-.model_privacy{
-    font-size: 12px;
-    font-family: 'Poppins', sans-serif;
+    color: #000000;
 }
 
-/* Modal Form Inputs */
-.model_inputs {
+.modal_body {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.social_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 20px;
 }
 
-.model_input, .continue_button, .svg_button, .continue_button2 {
-    width: 90%; /* Make inputs and buttons full-width in modal */
-    height: 40px;
-    margin: 8px 0;
-    border: 1px solid;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-/* Continue Button */
-.continue_button {
-    margin-top: 12%;
-    background-color: #000;
-    color: white;
-    cursor: pointer;
-}
-.continue_button2{
-    background-color: #000;
-    color: white;
-    cursor: pointer;
-}
-.all_svg {
-    width: 100%; /* Take up full width of parent */
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-items: center;
-}
-.svg_button_div{
+.social_button {
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-/* SVG Button */
-.svg_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%; /* Full width like input fields */
-    height: 40px;
-    margin: 8px 0;
-    border: 1px solid;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
     border-radius: 4px;
-    box-sizing: border-box;
-    padding-left: 10px;
-    background-color: white;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-/* Adjust SVG size to match input field width */
-.svg_button svg {
-    width: 24px; /* Adjust icon size */
-    height: auto;
+.social_button:hover {
+    background-color: #f9f9f9;
+}
+
+.social_button svg {
     margin-right: 10px;
 }
 
-.svg_span {
-    flex-grow: 1;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.create_span{
-    font-size: 17px;
-    font-family: 'Poppins', sans-serif;
-}
-.different_anchor_div{
-    margin-top: 2%;
-    margin-bottom: 9%;
-    
-}
-.different_anchor{
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-}
-.different_anchor:hover{
-    text-decoration: underline;
-}
-.added_email{
-    color: #000;
-    font-weight: bolder;
-    font-size: 17px;
-}
-.checkbox_container {
+.or_separator {
     display: flex;
     align-items: center;
-    width: 90%; /* Same width as other inputs */
-    /* Margin similar to other elements */
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-.orSeparator {
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #dddddd;
+}
+
+.or_text {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #666666;
+    font-weight: bold;
+}
+
+.modal_form {
     display: flex;
-    align-items: center;
-    width: 90%; /* Same width as other content */
-    margin: 16px 0; /* Adjust the margin for spacing */
-}
-
-.borderTop {
-    border-top: 1px solid #ddd; /* Add a top border to create a horizontal line */
-    flex-grow: 1; /* Ensure the lines take up equal space */
-}
-
-.orText {
-    margin: 0 10px; /* Add space between the text and lines */
-    font-weight: bold; /* Make the text bold */
-}
-
-.w-100pct {
-    width: 100%; /* Ensure the lines take full width */
-}
-
-.my-std {
-    margin-top: 8px;
-    margin-bottom: 8px; /* Adjust spacing above and below the separator */
-}
-
-.px-xsm {
-    padding-left: 8px;
-    padding-right: 8px; /* Small padding around the "or" text */
-}
-
-.strong {
-    font-weight: bold; /* Ensure the "or" text is bold */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .log_div, .list_div, .nav_signin_div {
-        width: 30%;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Stack navigation items vertically */
-    .nav_content {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .log_div, .list_div, .nav_signin_div {
-        width: 100%;
-    }
-
-    .list {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    li {
-        padding-left: 0;
-        padding-bottom: 10px;
-    }
-
-    .nav_signin_button {
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Adjust font size for smaller screens */
-    li {
-        font-size: 14px;
-    }
-
-    .logo_name {
-        font-size: 20px;
-    }
-
-    .nav_signin_button {
-        font-size: 14px;
-    }
-}
-
-/* Hamburger Icon */
-.hamburger {
-    display: none;
-    position: absolute;
-    top: 15px;
-    right: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    color: black;
-    z-index: 1000;
-    font-family: 'Poppins', sans-serif;
-}
-
-.bar {
-    color: white;
-    display: none;
-}
-
-.change {
-    background-color: red;
-}
-
-/* Close Button */
-.close_menu {
-    position: absolute;
-    top: 15px;
-    right: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    color: black;
-    z-index: 1000;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* For showing the dropdown */
-.list_div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     width: 100%;
 }
 
-.list_div.open {
-    display: block;
-}
-.close_menu {
-    display: none;
-}
-
-/* For mobile view */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .list_div {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: white;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-    }
-
-    .list_div.open {
-        display: flex;
-    }
-
-    .list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav_content {
-        justify-content: space-between;
-        padding: 0 20px;
-    }
-
-    /* Close button styles */
-    .close_menu {
-        display: flex;
-    }
-}
-
-
-/* Dropdown styling */
-.community {
-    position: relative;
-    cursor: pointer;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.dropdown-nav {
-    position: absolute;
-    top: 168%;
-    right:0;
-    left:0;
-    width: 300px;
-    max-height: 300px;
-    background-color: #fff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+.modal_input {
+    width: 100%;
     padding: 10px;
-    z-index: 1000;
-    display: none; /* Hide the dropdown by default */
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
-
-.community:hover .dropdown-nav {
-    display: block; /* Show the dropdown on hover */
+.modal_continue_button {
+    padding: 10px;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
 }
 
-
-.dropdown-nav h4 {
-    font-size: 1rem;
-    color: #333;
-    margin: 0 0 10px;
+.modal_continue_button:hover {
+    background-color: #555555;
 }
 
-.dropdown-nav p {
-    font-size: 0.875rem;
-    color: #666;
+.checkbox_container {
+    display: flex;
+    align-items: center;
     margin-bottom: 15px;
 }
 
-.dropdown .styles__sharedStyles__uiKitButton {
-    text-align: center;
+.checkbox_container input {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
 }
 
-.button__button-module__Button {
-    background-color: #00b074;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 3px;
-    font-size: 0.875rem;
+.checkbox_container label {
+    font-size: 14px;
+    color: #333333;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.button__button-module__Button:hover {
-    background-color: #008b5f;
+/* Additional Styles for Smooth Transitions */
+.sidebar, .nav_links, .userbutton_div {
+    transition: all 0.3s ease-in-out;
 }
-
-/* Responsive dropdown */
-@media (max-width: 768px) {
-    .dropdown-nav {
-        width: 100%; /* Make dropdown full-width on small screens */
-    }
-}
-
