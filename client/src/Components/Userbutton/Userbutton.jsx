@@ -55,16 +55,7 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
             </button>
             {isDropdownOpen && (
                 <div className="dropdown-menu" ref={dropdownRef}>
-                   <Link
-    to={`/profile/${userFirstname}-${userLastname}/${userId}`}
-    className="links"
-    onClick={() => {
-        setIsDropdownOpen(false);
-        setIsUserSidebarOpen(false);
-    }}
->
-    Profile
-</Link>
+                  <Link to={`/profile/${userFirstname}-${userLastname}/${userId}`} className='dropdown-links'>Profile</Link>
 <Link
     className="links"
     to={`/savedjobs/${userId}`}
