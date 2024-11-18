@@ -55,11 +55,21 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
             </button>
             {isDropdownOpen && (
                 <div className="dropdown-menu" ref={dropdownRef}>
-                    <Link to={`/profile/${userFirstname}-${userLastname}/${userId}`} className='links'>Profile</Link>
+                    <Link
+    to={`/profile/${userFirstname}-${userLastname}/${userId}`}
+    className="links"
+    onClick={() => setIsDropdownOpen(false)}
+>
+    Profile
+</Link>
                     {/* Pass userdata via state when navigating to savedjobs */}
-                    <Link className='links' to={`/savedjobs/${userId}`}>
-                        Saved Jobs
-                    </Link>
+                    <Link
+    className="links"
+    to={`/savedjobs/${userId}`}
+    onClick={() => setIsDropdownOpen(false)}
+>
+    Saved Jobs
+</Link>
                     <Logout />
                 </div>
             )}
