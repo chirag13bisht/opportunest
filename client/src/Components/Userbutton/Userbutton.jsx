@@ -14,12 +14,17 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
         setIsUserSidebarOpen(true);
     };
 
-    const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target) &&
-            buttonRef.current && !buttonRef.current.contains(event.target)) {
-            setIsDropdownOpen(false);
-        }
-    };
+   const handleClickOutside = (event) => {
+    if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+    ) {
+        setIsDropdownOpen(false);
+    }
+};
+
     const handleResize = () => {
         if (window.innerWidth > 768 && isUserSidebarOpen) {
             setIsUserSidebarOpen(false);
