@@ -220,7 +220,7 @@
 @media (max-width: 768px) {
     /* Show Hamburger on Mobile */
     .hamburger {
-        display: block;
+        display: none;
     }
     .userbutton_div{
         flex: 0 0 ;
