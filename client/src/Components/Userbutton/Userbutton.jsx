@@ -54,7 +54,7 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
                 </svg>
             </button>
             {isDropdownOpen && (
-                <div className="dropdown-menu" ref={dropdownRef}>
+                <div className="dropdown-menu" >
                   <Link to={`/profile/${userFirstname}-${userLastname}/${userId}`} className='links'>Profiles</Link>
 <Link
     className="links"
