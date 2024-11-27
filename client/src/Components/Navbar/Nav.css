@@ -243,6 +243,9 @@
     .userbutton_div.mobile-only {
         display: flex;
     }
+    .sign_in_button {
+        widht: auto;
+    }
 }
 
 @media (min-width: 769px) {
