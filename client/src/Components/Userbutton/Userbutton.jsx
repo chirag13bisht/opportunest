@@ -59,10 +59,6 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
 <Link
     className="links"
     to={`/savedjobs/${userId}`}
-    onClick={() => {
-        setIsDropdownOpen(false);
-        setIsUserSidebarOpen(false);
-    }}
 >
     Saved Jobs
 </Link>
