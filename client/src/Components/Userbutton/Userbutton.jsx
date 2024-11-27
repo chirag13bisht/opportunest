@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect, useRef } from 'react';
 import './Userbutton.css'; // Assuming your CSS is in this file
 import Logout from '../Logout/Logout';
@@ -14,17 +16,12 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
         setIsUserSidebarOpen(true);
     };
 
-   const handleClickOutside = (event) => {
-    if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target)
-    ) {
-        setIsDropdownOpen(false);
-    }
-};
-
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target) &&
+            buttonRef.current && !buttonRef.current.contains(event.target)) {
+            setIsDropdownOpen(false);
+        }
+    };
     const handleResize = () => {
         if (window.innerWidth > 768 && isUserSidebarOpen) {
             setIsUserSidebarOpen(false);
@@ -54,15 +51,12 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
                 </svg>
             </button>
             {isDropdownOpen && (
-                <div className="dropdown-menu" >
-                  <Link to={`/profile/${userFirstname}-${userLastname}/${userId}`} className='links'>Profiles</Link>
-<Link
-    className="links"
-    to={`/savedjobs/${userId}`}
->
-    Saved Jobs
-</Link>
-
+                <div className="dropdown-menu" ref={dropdownRef}>
+                    <Link to={`/profile/${userFirstname}-${userLastname}/${userId}`} className='links'>Profile</Link>
+                    {/* Pass userdata via state when navigating to savedjobs */}
+                    <Link className='links' to={`/savedjobs/${userId}`}>
+                        Saved Jobs
+                    </Link>
                     <Logout />
                 </div>
             )}
@@ -87,3 +81,4 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
 };
 
 export default Userbutton;
+
