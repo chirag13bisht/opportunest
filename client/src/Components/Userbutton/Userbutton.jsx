@@ -55,7 +55,7 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
             </button>
             {isDropdownOpen && (
                 <div className="dropdown-menu" ref={dropdownRef}>
-                  <Link to={`/profile/${userFirstname}-${userLastname}/${userId}`} className='dropdown-links'>Profiles</Link>
+                  <Link to={`/profile/${userFirstname}-${userLastname}/${userId}`} className='links'>Profiles</Link>
 <Link
     className="links"
     to={`/savedjobs/${userId}`}
