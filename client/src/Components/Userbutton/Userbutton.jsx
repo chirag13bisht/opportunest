@@ -51,15 +51,25 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
                 </svg>
             </button>
             {isDropdownOpen && (
-                <div className="dropdown-menu" ref={dropdownRef}>
-                    <Link to={`/profile/${userFirstname}-${userLastname}/${userId}`} className='links'>Profile</Link>
-                    {/* Pass userdata via state when navigating to savedjobs */}
-                    <Link className='links' to={`/savedjobs/${userId}`}>
-                        Saved Jobs
-                    </Link>
-                    <Logout />
-                </div>
-            )}
+    <div className="dropdown-menu" ref={dropdownRef}>
+        <Link 
+            to={`/profile/${userFirstname}-${userLastname}/${userId}`} 
+            className="links" 
+            onClick={() => setIsDropdownOpen(false)} // Close the menu after clicking
+        >
+            Profile
+        </Link>
+        <Link 
+            to={`/savedjobs/${userId}`} 
+            className="links" 
+            onClick={() => setIsDropdownOpen(false)} // Close the menu after clicking
+        >
+            Saved Jobs
+        </Link>
+        <Logout />
+    </div>
+)}
+
            {isDropdownOpen && ( < div className={`sidebar ${isUserSidebarOpen ? 'sidebar_open' : ''}`} ref={dropdownRef}>
                 {/* Close Icon */}
                 <div className="close_icon" onClick={() => setIsUserSidebarOpen(false)} aria-label="Close navigation menu">
