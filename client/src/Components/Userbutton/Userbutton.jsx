@@ -44,16 +44,15 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
    <div 
     className="dropdown-menu" 
     ref={dropdownRef} 
-    onClick={(e) => e.stopPropagation()} // Prevent parent click handlers
 >
         <Link 
             to={`/profile/${userFirstname}-${userLastname}/${userId}`} 
-            className="links" >
+            className="links" onClick={() => setIsDropdownOpen(false)} >
             Profile
         </Link>
         <Link 
             to={`/savedjobs/${userId}`} 
-            className="links" >
+            className="links" onClick={() => setIsDropdownOpen(false)} >
             Saved Jobs
         </Link>
         <Logout />
