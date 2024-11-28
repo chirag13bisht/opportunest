@@ -51,19 +51,19 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
                 </svg>
             </button>
             {isDropdownOpen && (
-    <div className="dropdown-menu" ref={dropdownRef}>
+   <div 
+    className="dropdown-menu" 
+    ref={dropdownRef} 
+    onClick={(e) => e.stopPropagation()} // Prevent parent click handlers
+>
         <Link 
             to={`/profile/${userFirstname}-${userLastname}/${userId}`} 
-            className="links" 
-            onClick={() => setIsDropdownOpen(false)} // Close the menu after clicking
-        >
+            className="links" >
             Profile
         </Link>
         <Link 
             to={`/savedjobs/${userId}`} 
-            className="links" 
-            onClick={() => setIsDropdownOpen(false)} // Close the menu after clicking
-        >
+            className="links" >
             Saved Jobs
         </Link>
         <Logout />
