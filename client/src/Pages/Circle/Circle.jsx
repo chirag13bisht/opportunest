@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Circle.css'; // Import the CSS file
 import avatar from "../../image/avatar.jpg";
+import { Link } from 'react-router-dom'; 
 
 const Circle = () => {
     const [alluserdata, setAllUserData] = useState([]);
