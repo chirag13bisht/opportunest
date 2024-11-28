@@ -119,11 +119,15 @@ const Circle = () => {
                     {filteredUsers.length > 0 ? (
                         filteredUsers.map((user, index) => (
                             <div className="user-card" key={index}>
-                                <img
+                                 <Link 
+            to={`/profile/${userFirstname}-${userLastname}/${userId}`} 
+                                     <img
                                     src={user && user.image ? `https://opportunest-1.vercel.app/Images/${user.image}` : avatar}
                                     alt={user.name}
                                     className="user-image"
                                 />
+        </Link>
+                                
                                 <div className="user-info">
                                     <h3>{user.basicdata[0]?.firstname} {user.basicdata[0]?.lastname}</h3>
                                     <p>{user.basicdata[0]?.profession} at {user.basicdata[0]?.professionplace}</p>
