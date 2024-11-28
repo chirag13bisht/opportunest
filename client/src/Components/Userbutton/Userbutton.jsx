@@ -31,11 +31,6 @@ const Userbutton = ({ userId, userFirstname, userLastname }) => {
     }, [isUserSidebarOpen]);
 
 
-    useEffect(() => {
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
-
 
     return (
         <>
